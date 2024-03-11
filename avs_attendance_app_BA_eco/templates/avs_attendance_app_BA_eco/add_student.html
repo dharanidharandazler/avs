@@ -1,0 +1,24 @@
+<!-- avs_attendance_app/templates/avs_attendance_app/add_student.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student B.A-Economics</title>
+</head>
+
+<body>
+    <h1>Add Student B.A-Economics</h1>
+
+    <form method="POST" action="{%url 'add_student'%}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% for error in form.errors %}
+        <p style="color: red;">{{ error }}</p>
+        {% endfor %}
+        <button type="submit">Add Student</button>
+    </form>
+</body>
+
+</html>
